@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            body { background:rgb(1, 42, 99);}
+            div#fm_container{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-size:30px;
+                        margin-top:10%;
+                            }
+        </style>
+    
+    </head>
+    <body>
+        <div id="fm_container">
+            <label for="name" class="label">name:</label>
+            <input id="name" class="input">
+            <label for="password"class="label">password:</label>
+            <input id="password" class="input" onclick="GetData('GET','/project_files/json/abhinav.json')">
+            <label for="email" class="label">email:</label>
+            <input id="email" class="input" onclick="assign()">
+            <button onclick="login()";>submit</button>
+        </div>
+        <script type="text/javascript" >
+        var nameInput,passInput,emalInput,jsname,jspass,jsmail;
+            function assign() {
+ nameInput = document.querySelector("#name").value;
+ passInput = document.querySelector("#password").value;
+ emalInput = document.querySelector("#email").value;
+ jsname=obj.name;
+ jspass=obj.password;
+ jsmail=obj.email;
+}
+               function login() {
+                   
+                   if(nameInput==jsname){
+                        if(passInput==jspass){
+                            if(emalInput==jsmail){
+                                window.location.replace("home.html");
+                            }
+                        }
+                   }
+else{
+document.querySelector("body").innerText='Error';
+}
+               } 
+        
+        </script>
+    </body>
+    <script type="text/javascript" src="\project_files\js\getData.js">
+
+    </script>
+</html>

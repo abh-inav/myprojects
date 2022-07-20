@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script src="\project_files\js\getDataTrigger.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="project_files/main-mepage-style.css">
+        <link rel="stylesheet" href="project_files/chat box.css"/>
+        <script src="\project_files\js\basiccontrol.js" type="text/javascript"></script>
+    </head>
+    <body ><!--onclick="document.querySelector('html').requestFullscreen()" onload="outMsg()"-->
+    <div id="uPmCont">
+        <div id="left_Bx">
+              <div id="lG_fM_Bx"><!--contsin muusic and food and logo -->
+                  <div id="logo_Bx"><!--logo_Box-->
+                <img src="project_files\logo.png" alt="logo" height="100%" width="100%">
+                  </div> 
+              <div id="fM_Bx"><!--conotain food court and music -->
+                    <div id="food-court_Bx" onscroll="call_cCad()"><!--food court box-->
+                        <div id="fDiC0" class="fDiC"></div>
+                        <div id="fDiC1" class="fDiC"></div>
+                        <div id="fDiC2" class="fDiC"></div>
+                        <div id="fDiC3" class="fDiC"></div>
+                        <div id="fDiC3" class="fDiC"></div>
+                        <div id="fDiC3" class="fDiC"></div>
+                       </div>
+                     <div id="music_player_Bx"><!--music player box-->
+                            <audio 
+                                controls autoplay
+                                src="project_files/media/audio/y2mate.com - Jain  Oh Man Official Video  Live MNAC Museum.mp3">
+                            </audio>
+                     </div>
+               </div>
+         </div>
+        </div>
+        <div id="right_Bx">
+            <div id="header"><!--header-->
+                <div id="home" class="header_Bx"><p onclick="window.open('home.html')">home</p></div>
+                <div id="otH_InfO">
+                    <div id="contact" class="otH_info_Bx" onclick="window.open('contact.html')"><p>contact</p></div>
+                  
+                </div>
+             </div>
+             <div id="left_Bx_2" ><!--contain chatbox and other stuff-->
+                <div id="chat_bot"><!--chat box box-->
+                    <div id="messagearea">
+                        <p id="txtHloMsg">hello</p>
+                    </div>
+                    <textarea title="enter query here" id="input" height="40px" width="40px"></textarea>
+                    <img  src="project_files\Send-Symbol-Icon.webp" height="40px" width="40px" id="sndClkBtn" onclick="submit()">
+                </div>
+                    <div id="nTq_Bx"><!--contain news twet quote-->
+                    <div id="news_Bx"><!--news box-->
+                       <p id="nsBee">BEE</p>
+                    </div>
+                    <div id="tQ_bx"><!--contain tweet and quote-->
+                        <div id="tweet_Bx"><!--conatain tweet-->
+                           
+                        </div>
+                        <div id="quote_Bx"><!--conatain quote-->
+                        <p id="quote">nothing will change if <br> you dont change</p>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="footer_Bx">
+
+        </div>
+    </body>
+    <script>
+        var ad= '<div id="fDiC3" class="fDiC"></div>';
+        var call_count,callcad_count,outmsg;
+        callcad_count=0;
+       function call_cCad(){
+           if(callcad_count<=10){//checks end of scrollbar
+            if(document.querySelector("#food-court_Bx").offsetHeight+document.querySelector("#food-court_Bx").scrollTop>=document.querySelector("#food-court_Bx").scrollHeight){
+                addin();
+        }
+        }  
+    }
+        function addin(){
+            document.querySelector("#food-court_Bx").insertAdjacentHTML("afterbegin",ad);
+        }
+    </script>
+</html>
