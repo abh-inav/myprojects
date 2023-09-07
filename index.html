@@ -1,8 +1,86 @@
 <html>
+
+<head>
+    <style>
+        html {
+            background-image: url(/indexMedia/wallpaper.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        body {
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(43, 80, 62, 0.42);
+            backdrop-filter: blur(4.5px);
+        }
+
+
+        #loginbtn {
+
+            width: 13%;
+            height: 7%;
+            /* flex-shrink: 0; */
+            border-radius: 46px;
+            background: rgba(217, 217, 217, 0.74);
+            box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.25) inset;
+            left: 46%;
+            top: 59%;
+        }
+
+        #circle,
+        #loginbtn {
+            position: absolute;
+
+        }
+
+        #circle {
+            background-image: url(/indexMedia/myimage.jpg);
+            width: 140px;
+            height: 140px;
+            border-radius: 364px;
+            left: 47%;
+            top: 31%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        p {
+            margin: 0 0 0 47px;
+            font-family: serif;
+            font-size: 2pc;
+        }
+
+        #loginbtn:hover {
+            background: rgb(142 90 90 / 74%);
+            box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.25) inset;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            100% {opacity:10% ;} 
+        }
+    </style>
+</head>
+
 <body>
-<h1>hello this is abhinav</h1>
-  <h2>1)lyric sync project<h2>
-    <p>in this project text is synced with audio<p>
-    <iframe src="https://abh-inav.github.io/lyricsync/" style="border: solid;width: 50%;border-radius: 30px;background: #e6e2cf;box-shadow: 1px 0px 20px 16px #ffffe1;" title="Iframe Example"></iframe>
+    <div id="ovrlayblur">
+
+    </div>
+    <div id="circle"></div>
+    <div id="loginbtn" onclick="onclicbtn()">
+        <p>login</p>
+    </div>
 </body>
+<script>
+    function onclicbtn() {
+        document.querySelector("html").style.animation='fadeIn 1s';
+        newpage();
+        
+    }
+    function newpage() {
+        window.location.replace('desktop.html');
+    }
+</script>
+
 </html>
