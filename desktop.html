@@ -26,7 +26,15 @@
             height: 26%;
             background-repeat: no-repeat;
         }
-
+       .file {
+            z-index: 3;
+            position: absolute;
+            background-size: 100%;
+            width: 10%;
+            height: 26%;
+            background-repeat: no-repeat;
+        }
+        
         .folder:hover {
             border: solid 1px #e0f5ff96;
             box-shadow: 1px 1px 88px 59px #87ccffa6 inset;
@@ -53,6 +61,11 @@ cursor: pointer;
    #skills{
     top: 32%;
    }     
+           #resume{
+    top: 64%;
+    background-size: 86%;
+   }     
+
 
         @keyframes comin {
             0% {
@@ -82,17 +95,31 @@ cursor: pointer;
         <div id="skills" class="folder">
             <p id="sklT" class="Dtext">skills</p>
         </div>
+          <div id="resume" class="file" style='background-image: url(indexMedia/resumeicn.png);'>
+            <p id="resumeT" class="Dtext">resume</p>
+        </div>
     </div>
 </body>
 <script>
     let p;
     let c= true;
  const skills = document.getElementById('skills');
+ const resume = document.getElementById('resume');
 const anmly = document.getElementById('anmly');
 skills.addEventListener('click', function(){
     if(c){
     anmly.insertAdjacentHTML('beforeend', ' <iframe id="ifr" src="ifile.html" ></iframe>');
 p=document.querySelector("#ifr");
+    c=false;
+    }else{
+        p.remove();
+        c=true;
+    }
+})
+resume.addEventListener('click', function(){
+    if(c){
+    anmly.insertAdjacentHTML('beforeend', ' <iframe  id="ifrre"src="indexFiles/resumeword972023.pdf"></iframe>');
+p=document.querySelector("#ifrre");
     c=false;
     }else{
         p.remove();
