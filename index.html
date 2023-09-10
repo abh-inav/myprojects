@@ -1,129 +1,86 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <style>
         html {
-            z-index: -1;
-            background-image: url(https://raw.githubusercontent.com/abh-inav/myprojects/main/indexMedia/wal2.jpg);
+            background-image: url(https://raw.githubusercontent.com/abh-inav/myprojects/main/indexMedia/wallpaper.jpg);
             background-size: 100%;
             background-repeat: no-repeat;
         }
 
         body {
-            z-index: 1;
             margin: 0px;
             width: 100%;
             height: 100%;
+            background: rgba(43, 80, 62, 0.42);
+            backdrop-filter: blur(4.5px);
         }
 
-        .folder {
-            z-index: 3;
+
+        #loginbtn {
+
+            width: 13%;
+            height: 7%;
+            /* flex-shrink: 0; */
+            border-radius: 46px;
+            background: rgba(217, 217, 217, 0.74);
+            box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.25) inset;
+            left: 46%;
+            top: 59%;
+        }
+
+        #circle,
+        #loginbtn {
             position: absolute;
-            background-image: url(https://raw.githubusercontent.com/abh-inav/myprojects/main/indexMedia/folder.png);
+
+        }
+
+        #circle {
+            background-image: url(https://raw.githubusercontent.com/abh-inav/myprojects/main/indexMedia/myimage.jpg);
+            width: 140px;
+            height: 140px;
+            border-radius: 364px;
+            left: 47%;
+            top: 31%;
             background-size: 100%;
-            width: 10%;
-            height: 26%;
             background-repeat: no-repeat;
         }
-        .file {
-            z-index: 3;
-            position: absolute;
-            background-size: 100%;
-            width: 10%;
-            height: 26%;
-            background-repeat: no-repeat;
+
+        p {
+            margin: 0 0 0 47px;
+            font-family: serif;
+            font-size: 2pc;
         }
 
-        .folder:hover {
-            border: solid 1px #e0f5ff96;
-            box-shadow: 1px 1px 88px 59px #87ccffa6 inset;
-            border-radius: 10px;
+        #loginbtn:hover {
+            background: rgb(142 90 90 / 74%);
+            box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.25) inset;
+            cursor: pointer;
         }
-
-        #anmly {
-            z-index: 2;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            animation: comin 1s;
-        }
-.Dtext{
-    top: 88%;
-    left: 13%;
-    font-family: system-ui;
-    font-size: 25px;
-    color: white;
-    position: absolute;
-margin: 0px;
-cursor: pointer;
-}
-   #skills{
-    top: 32%;
-   }   
-   #resume{
-    top: 64%;
-    background-size: 86%;
-   }     
-
-        @keyframes comin {
-            0% {
-                top: 100%;
-            }
-
-            100% {
-                top: 0%;
-            }
-        }
-        iframe{
-            position: absolute;
-    left: 9%;
-    top: 5%;
-    height: 90%;
-    width: 82%;
-    border-radius: 31px;
+        @keyframes fadeIn {
+            100% {opacity:10% ;} 
         }
     </style>
 </head>
 
 <body>
-    <div id="anmly">
-        <div id="experience" class="folder"  onclick="window.location.replace('fileexplorer.html')">
-            <p id="expT" class="Dtext">experience</p>
-        </div>
-        <div id="skills" class="folder">
-            <p id="sklT" class="Dtext">skills</p>
-        </div>
-        <div id="resume" class="file" style='background-image: url(https://raw.githubusercontent.com/abh-inav/myprojects/main/indexMedia/resumeicn.png);'>
-            <p id="resumeT" class="Dtext">resume</p>
-        </div>
+    <div id="ovrlayblur">
+
+    </div>
+    <div id="circle"></div>
+    <div id="loginbtn" onclick="onclicbtn()">
+        <p>login</p>
     </div>
 </body>
 <script>
-    let p;
-    let c= true;
- const skills = document.getElementById('skills');
- const resume = document.getElementById('resume');
-const anmly = document.getElementById('anmly');
-skills.addEventListener('click', function(){
-    if(c){
-    anmly.insertAdjacentHTML('beforeend', ' <iframe id="ifr" src="ifile.html" ></iframe>');
-p=document.querySelector("#ifr");
-    c=false;
-    }else{
-        p.remove();
-        c=true;
+    function onclicbtn() {
+        document.querySelector("html").style.animation='fadeIn 1s';
+        newpage();
+        
     }
-})
-resume.addEventListener('click', function(){
-    if(c){
-    anmly.insertAdjacentHTML('beforeend', ' <iframe  id="ifrre"src="indexFiles/resumeword972023.pdf"></iframe>');
-p=document.querySelector("#ifrre");
-    c=false;
-    }else{
-        p.remove();
-        c=true;
+    function newpage() {
+        window.location.replace('desktop.html');
     }
-})
 </script>
+
 </html>
